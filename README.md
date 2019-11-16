@@ -1,3 +1,3 @@
-## Raect Todos
+## React Todos
 
 Todos using React
