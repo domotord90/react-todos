@@ -1,0 +1,175 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.textInputContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#textInput {
+  display: block;
+  width: 450px;
+  font-size: 30px;
+  padding: 15px 0 15px 50px;
+  font-weight: normal;
+  box-shadow: 0px 4px 4px lightgray;
+  border: none;
+}
+
+.allCompleted {
+  transform: rotate(90deg) scale(0.8, 1.8);
+  font-size: 24px;
+  position: relative;
+  top: 50px;
+  left: 6px;
+  width: 24px;
+}
+
+input::placeholder {
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.1);
+}
+
+#hiddenInput {
+  display: none;
+}
+#hiddenInput + .allCompleted {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+#hiddenInput:checked + .allCompleted {
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: bold;
+}
+
+.taskLabel {
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 15px;
+  /*display: inline-block;*/
+  width: 50%;
+}
+
+.taskContainer {
+  background: white;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 15px 0px;
+  max-width: 100vw;
+  display: grid;
+  grid-template-columns: 0.75fr 10fr 1fr;
+}
+
+.taskCheckbox {
+  display: none;
+}
+
+.hiddenButton {
+  display: none;
+}
+
+.taskCheckbox + .hiddenLabel::before /*.taskLabel::before*/ {
+  content: "\2714";
+  font-size: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  padding: 0px 6px;
+  margin-right: 10px;
+  position: relative;
+  left: 6px;
+  bottom: 3px;
+  color: transparent;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.taskContainer:hover .hiddenButtonLabel::after {
+  content: "x";
+  display: inline-block;
+  font-size: 24px;
+  margin: 0 auto;
+  position: absolute;
+  padding-top: 5px;
+  color: rgba(255, 0, 0, 0.5);
+}
+
+.taskContainer:hover .hiddenButtonLabel:hover::after {
+  content: "x";
+  display: inline-block;
+  font-size: 24px;
+  margin: 0 auto;
+  position: absolute;
+  padding-top: 5px;
+  color: rgba(255, 0, 0, 1);
+}
+
+.taskCheckbox:checked + .hiddenLabel::before/*.taskLabel::before*/ {
+  content: "\2714";
+  font-size: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  padding: 0px 6px;
+  margin-right: 10px;
+  position: relative;
+  left: 6px;
+  bottom: 3px;
+  color: darkgreen;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.taskCheckbox:checked + .hiddenLabel + .taskLabel {
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+#clearButton {
+  display: none;
+}
+
+.clearContainer {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.clearLabel:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.mainBottomContainer {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  padding: 10px 0;
+  background: white;
+  font-size: 14px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 10px 0 -5px #eee,
+    0 10px 1px -4px rgba(0, 0, 0, 0.15), 0 20px 0 -10px #eee,
+    0 20px 1px -9px rgba(0, 0, 0, 0.15);
+}
+
+.filterContainer {
+  display: inline-block;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"] + label {
+  margin: 0 10px;
+  padding: 2px 5px;
+}
+
+input[type="radio"]:checked + label {
+  border: 1px solid rgba(175, 47, 47, 0.3);
+  border-radius: 5px;
+}
+
+.itemCounter {
+  padding-left: 10px;
+}
