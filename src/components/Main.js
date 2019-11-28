@@ -186,7 +186,7 @@ class Main extends React.Component {
     if (this.props.parentState.tasks.length === 0) {
       return (
         <main>
-          <div className="textInputContainer">
+          <div className="textInputContainerEmpty">
             <input
               id="textInput"
               type="text"
@@ -220,7 +220,7 @@ class Main extends React.Component {
               onKeyDown={this.onKeyPress}
             />
           </div>
-          <div>
+          <div className="tasksContainer">
             {this.props.parentState.tasks.map((task, i) => {
               if (this.state.filter === "active" && !task.completed) {
                 return (

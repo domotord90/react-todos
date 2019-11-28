@@ -3,6 +3,8 @@ import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
 
+import "../styles/App.css";
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -63,7 +65,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="app-main-container">
         <Header />
         <Main
           updateState={this.updateState}
